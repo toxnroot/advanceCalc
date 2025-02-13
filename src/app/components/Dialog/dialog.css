@@ -1,0 +1,74 @@
+.dialog{
+    width: 500px;
+    height: 500px;
+    background: #9d9d9d24;
+    backdrop-filter: blur(50px);
+    position: absolute;
+    top: 150px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+}
+.close{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: -7%;
+    right: -43%;
+}
+.close::after{
+    content: "";
+    width: 20px;
+    height: 5px;
+    background: #ec3131;
+    transform: rotate(135deg);
+    position: absolute;
+    border-radius: 10px;
+}
+.close::before{
+    content: "";
+    width: 20px;
+    height: 5px;
+    background: #ec3131;
+    transform: rotate(-135deg);
+    position: absolute;
+    border-radius: 10px;
+}
+.close:hover::after,.close:hover::before{
+    background: #ec3131ab;
+}
+.title{
+    font-size: 1.5rem;
+}
+.inp{
+    width: 80%;
+    padding: 5px;
+    font-size: 1.3rem;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    background: #3d3c3c;
+}
+#employ{
+    width: 60%;
+    padding: 7px;
+    border-radius: 10px;
+    background: var(--pramiry);
+    font-size: 1.3rem;
+}
+#employ:hover{
+    background: #4c0fbc8f;
+}
+.notfy{
+    visibility: hidden;
+    padding: 10px;
+    width: 50%;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    background: #42c534;
+    text-align: center;
+}

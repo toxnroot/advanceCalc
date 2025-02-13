@@ -1,0 +1,175 @@
+/* جعل النصوص والجدول من اليمين لليسار */
+html {
+    direction: rtl;
+    background-color: #121212;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* الحاوية الأساسية للجدول */
+  .table-container {
+    width: 1200px;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  /* تصميم الجدول */
+  .styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #1e1e1e;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  /* ترويسة الجدول */
+  .styled-table th, 
+  .styled-table td {
+    padding: 15px;
+    text-align: center;
+  }
+  
+  /* خلفية العناوين */
+  .styled-table thead {
+    background: var(--pramiry);
+    color: white;
+  }
+  
+  /* تنسيق الصفوف */
+  .styled-table tbody tr {
+    border-bottom: 1px solid #333;
+  }
+  
+  .styled-table tbody tr:hover {
+    background: #292929;
+  }
+  
+  /* أزرار الإجراءات */
+  .actions {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+  }
+  
+  /* تصميم الأزرار */
+  .actions button {
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  /* زر التعديل */
+  .edit-btn {
+    background: #ffc107;
+    color: black;
+  }
+  
+  .edit-btn:hover {
+    background: #e0a800;
+  }
+  
+  /* زر الحذف */
+  .delete-btn {
+    background: #dc3545;
+    color: white;
+  }
+  
+  .delete-btn:hover {
+    background: #c82333;
+  }
+  
+  /* زر تم التسليم */
+  .delivered-btn {
+    background: #28a745;
+    color: white;
+  }
+  
+  .delivered-btn:hover {
+    background: #218838;
+  }
+  
+  /* زر مؤجل */
+  .pending-btn {
+    background: #6c757d;
+    color: white;
+  }
+  
+  .pending-btn:hover {
+    background: #5a6268;
+  }
+  
+  .edit-dialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #222;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+  .edit-title {
+    font-size: 1.5rem;
+  }
+  .edit-dialog input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    background: #333;
+    font-size: 1.2rem;
+  }
+  
+  .edit-dialog button {
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1.2rem;
+  }
+  
+  .edit-dialog button:first-of-type {
+    background: #28a745;
+    color: white;
+  }
+  
+  .edit-dialog button:last-of-type {
+    background: #dc3545;
+    color: white;
+  }
+
+/* ✅ تمييز حالة "تم التسليم" باللون الأخضر */
+.status-delivered {
+    color: white;
+    background-color: #4CAF50; /* أخضر */
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+    display: inline-block;
+    min-width: 80px;
+}
+
+/* ✅ تمييز حالة "مؤجل" باللون الأحمر */
+.status-pending {
+    color: white;
+    background-color: #FF5733; /* أحمر */
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+    display: inline-block;
+    min-width: 80px;
+}
