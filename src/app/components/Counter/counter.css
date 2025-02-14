@@ -3,6 +3,7 @@
     justify-content:space-around;
     align-items: center;
     width: 100%;
+    gap: 10px;
 }
 .count{
     width: 80%;
