@@ -52,6 +52,7 @@ const Table = ({ employ = [], setEmploys }) => {
             <th>الأسم</th>
             <th>اليومية</th>
             <th>ايام السلف</th>
+            <th>السلفة</th>
             <th>الحالة</th>
             <th>الأجرأت</th>
           </tr>
@@ -69,9 +70,8 @@ const Table = ({ employ = [], setEmploys }) => {
                     setEmploys={setEmploys}
                   />
                 </td>
-                <td
-                  
-                >
+                <td>{element.salary * element.day}</td>
+                <td>
                 <p className={
                     element.status === "تم التسليم"
                       ? "status-delivered"
