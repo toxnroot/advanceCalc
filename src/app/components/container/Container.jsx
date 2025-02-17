@@ -51,6 +51,19 @@ const Container = () => {
       setRemainingAmount(0);
     }
   };
+  const handleResetStatusAndDays = () => {
+    if (window.confirm("هل تريد إعادة ضبط الحالة وعدد الأيام لجميع الموظفين؟")) {
+      const updatedEmploys = employs.map(emp => ({
+        ...emp,
+        status: "لم يتم التسليم", // إعادة ضبط الحالة
+        day: 0 // إعادة الأيام إلى 0
+      }));
+  
+      localStorage.setItem("employ", JSON.stringify(updatedEmploys));
+      setEmploys(updatedEmploys);
+    }
+  };
+  
 
   return (
     <div className="container">
@@ -68,6 +81,10 @@ const Container = () => {
       <Dialog show={show} setShow={setShow} onEmployAdded={handleEmployAdded} />
       <p className="remaining-amount">المبلغ المتبقي: {remainingAmount}</p>
       <button onClick={handleResetData} className="reset-btn">🗑️ حذف جميع البيانات</button>
+      <button onClick={handleResetStatusAndDays} className="reset-status-btn">
+  🔄 إعادة ضبط الحالة والأيام
+</button>
+
     </div>
   );
 };

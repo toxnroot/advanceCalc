@@ -73,12 +73,17 @@ const Table = ({ employ = [], setEmploys }) => {
                 <td>{element.salary * element.day}</td>
                 <td>
                 <p className={
-                    element.status === "تم التسليم"
-                      ? "status-delivered"
-                      : element.status === "مؤجل"
-                      ? "status-pending"
-                      : ""
-                  }> {element.status || "غير محدد"}</p>
+  element.status === "تم التسليم"
+    ? "status-delivered"
+    : element.status === "مؤجل"
+    ? "status-pending"
+    : element.status === "لم يتم التسليم"
+    ? "status-not-delivered"
+    : ""
+}>
+  {element.status || "لم يتم التسليم"}
+</p>
+
                  
                 </td>
 
@@ -107,6 +112,13 @@ const Table = ({ employ = [], setEmploys }) => {
                   >
                     مؤجل
                   </button>
+                  <button
+  className="not-delivered-btn"
+  onClick={() => updateStatus(index, "لم يتم التسليم")}
+>
+  لم يتم التسليم
+</button>
+
                 </td>
               </tr>
             ))

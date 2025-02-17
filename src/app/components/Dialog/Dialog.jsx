@@ -9,6 +9,7 @@ const Dialog = ({ show, setShow, onEmployAdded }) => {
   const [name, setName] = useState("");
   const [salary, setSalary] = useState(0);
   const [day, setDay] = useState(0);
+  const [status, setStatus] = useState("لم يتم التسليم");
 
   const notfyTime = () => {
     if (!notfy.current) return; // ✅ تجنب الخطأ إذا لم يتم تعيين `ref`
@@ -38,7 +39,7 @@ const Dialog = ({ show, setShow, onEmployAdded }) => {
     }
   
     const employ = JSON.parse(localStorage.getItem("employ")) || [];
-    employ.push({ name, salary, day });
+    employ.push({ name, salary, day , status });
     localStorage.setItem("employ", JSON.stringify(employ));
   
     onEmployAdded();
