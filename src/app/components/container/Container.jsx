@@ -80,9 +80,8 @@ const Container = () => {
       <Table employ={employs} setEmploys={setEmploys} />
       <Dialog show={show} setShow={setShow} onEmployAdded={handleEmployAdded} />
       <p className="remaining-amount">المبلغ المتبقي: {remainingAmount}</p>
-      <button onClick={handleResetData} className="reset-btn">🗑️ حذف جميع البيانات</button>
-      <button onClick={handleResetStatusAndDays} className="reset-status-btn">
-  🔄 إعادة ضبط الحالة والأيام
+      <button onClick={handleResetData} className="reset-btn"> حذف جميع البيانات</button>
+      <button onClick={handleResetStatusAndDays} className="reset-status-btn"> إعادة ضبط الحالة والأيام
 </button>
 
     </div>
